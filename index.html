@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>修改 B671 无线名称与密码 · 操作教程</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#070a14;font-family:-apple-system,'Segoe UI','Microsoft YaHei',sans-serif;overflow:hidden}
+#stage{position:absolute;left:50%;top:50%;width:960px;height:540px;transform-origin:center;transform:translate(-50%,-50%);box-shadow:0 24px 80px rgba(0,0,0,.55)}
+.s{position:absolute;inset:0;background:#F2F4F8;color:#1A2233;padding:64px 88px 56px;display:none;flex-direction:column}
+.s.on{display:flex}
+.s.d{background:#0D1326;color:#fff}
+.k{font-size:13px;color:#2563EB;margin-bottom:8px}
+.t{font-size:30px;line-height:1.35;font-weight:700}
+.sub{font-size:14px;color:#6B7589;margin-top:8px}
+.s.d .sub{color:#9EAABE}
+.b{flex:1;margin-top:22px;min-height:0;display:flex;flex-direction:column}
+.pn{position:absolute;right:88px;bottom:18px;font-family:Consolas,monospace;font-size:13px;color:#6B7589}
+.s.d .pn{color:#5d6a80}
+.cover{position:absolute;left:88px;top:146px;width:3px;height:200px;background:#2563EB}
+.ck{position:absolute;left:112px;top:138px;font-size:13px;color:#2563EB}
+.ct{position:absolute;left:110px;top:174px;font-size:44px;line-height:1.2;font-weight:700}
+.cs{position:absolute;left:112px;top:352px;font-size:17px;color:#9EAABE;line-height:1.6;max-width:700px}
+.cr{position:absolute;left:88px;top:452px;width:784px;height:1px;background:rgba(37,99,235,.4)}
+.cm{position:absolute;left:88px;top:466px;font-size:13px;color:#768296}
+.toc{display:grid;grid-template-columns:330px 1fr;gap:56px}
+.big{font-size:33px;font-weight:700;line-height:1.32;margin-top:10px}
+.tr{width:56px;height:2px;background:#2563EB;margin:18px 0}
+.toc p{font-size:15px;color:#6B7589;line-height:1.9}
+.ch{display:flex;gap:16px;align-items:baseline;padding:9px 0 11px;border-bottom:1px solid rgba(13,19,38,.12)}
+.ch:last-child{border:0}
+.ch .no{font-family:Consolas,monospace;font-size:24px;font-weight:700;color:#2563EB;width:44px}
+.ch h3{font-size:19px;font-weight:700}
+.ch small{display:block;font-size:13px;color:#6B7589;margin-top:2px}
+.ql{border-left:3px solid rgba(37,99,235,.6);padding-left:18px}
+.ql li{list-style:none;font-size:15px;color:#AAB6CA;line-height:1.6;margin-bottom:14px}
+.ft{margin-top:auto;font-size:13px;color:#6B7589}
+.cl{border-left:3px solid rgba(37,99,235,.7);padding-left:18px}
+.cl li{list-style:none;font-size:13px;color:#AAB6CA;margin-bottom:10px}
+.cl b{color:#fff;font-family:Consolas,monospace;margin-right:12px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:#0D1326;color:#fff;font-size:12px;font-weight:600;text-align:left;padding:9px 12px}
+td{padding:10px 12px;border-bottom:1px solid rgba(13,19,38,.12);vertical-align:top;line-height:1.55}
+tbody tr:nth-child(even){background:#EDF1F7}
+.m{font-family:Consolas,monospace;font-size:11px}
+.h{font-family:Consolas,monospace;font-size:11px;color:#2563EB}
+.k2{font-weight:600}
+.code{background:#0D1326;color:#C8D4E8;font-family:Consolas,monospace;font-size:11.5px;line-height:1.75;padding:18px 20px;white-space:pre;overflow:hidden}
+.cg{color:#6B7589}
+.split{display:grid;grid-template-columns:470px 1fr;gap:38px}
+.side h4{font-size:14px;font-weight:700;color:#2563EB;margin-bottom:10px}
+.rl{height:1px;background:rgba(13,19,38,.12);margin-bottom:14px}
+.pt{margin-bottom:16px}
+.pt b{display:block;font-size:13px;margin-bottom:3px}
+.pt span{font-size:12px;color:#6B7589;line-height:1.6}
+.band{background:#0D1326;color:#fff;font-size:13px;padding:13px 20px;margin-top:auto}
+.strip{background:#0D1326;color:#C8D4E8;font-family:Consolas,monospace;font-size:11px;padding:11px 16px;margin-top:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:44px;position:relative}
+.cmp:before{content:'';position:absolute;left:50%;top:0;width:1px;height:100%;background:rgba(13,19,38,.14)}
+.cmp>div{padding-right:28px}
+.cmp>div:last-child{padding-left:28px;padding-right:0}
+.tag{font-family:Consolas,monospace;font-size:12px;color:#2563EB;margin-bottom:8px}
+.cmp h3{font-size:22px;font-weight:700;margin-bottom:10px}
+.cmp p{font-size:13px;line-height:1.75}
+.sc{font-size:12px;color:#6B7589;margin-top:12px}
+.blk{margin-bottom:20px}
+.tg{font-family:Consolas,monospace;font-size:12px;color:#2563EB;margin-bottom:6px}
+.blk h3{font-size:22px;font-weight:700;margin-bottom:8px}
+.blk p{font-size:13px;line-height:1.7}
+.hr{height:1px;background:rgba(13,19,38,.12);margin:16px 0}
+.fin{position:absolute;left:86px;top:88px;font-size:34px;line-height:1.3;font-weight:700}
+.fr{position:absolute;left:88px;top:248px;width:3px;height:140px;background:rgba(37,99,235,.7)}
+.fc{position:absolute;left:112px;top:250px}
+.fl{position:absolute;left:88px;top:414px;width:784px;height:1px;background:rgba(37,99,235,.4)}
+.fz{position:absolute;left:88px;top:430px;font-size:15px;font-weight:700;color:#fff}
+.fs{position:absolute;left:88px;top:468px;font-size:12px;color:#6B7589}
+nav{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:6px 14px;color:#cfd8e6;font-family:Consolas,monospace;font-size:12px;z-index:9}
+nav button{background:none;border:0;color:#cfd8e6;font-size:15px;cursor:pointer}
+nav button:hover{color:#fff}
+@media print{body{background:#fff;overflow:visible}#stage{position:static;transform:none!important;box-shadow:none}.s{display:flex!important;position:relative;inset:auto;page-break-after:always}nav{display:none}}
+</style>
+</head>
+<body>
+<div id='stage'>
+
+<section class='s d on'>
+<div class='cover'></div>
+<div class='ck'>设备配置操作教程 / 华为 OptiXstar B671-1E3W</div>
+<div class='ct'>修改 B671 的<br>无线名称与密码</div>
+<div class='cs'>官网页面被配置向导锁死时，怎么绕过它，把配置直接写进设备</div>
+<div class='cr'></div>
+<div class='cm'>管理入口 192.168.10.78　账号 user　频段 2.4G / 5G　加密 WPA/WPA2-PSK</div>
+<div class='pn'>01 / 11</div>
+</section>
+
+<section class='s'>
+<div class='k'>全篇只回答一个问题</div>
+<div class='b' style='margin-top:6px'>
+<div class='toc'>
+<div><div class='big'>网页上点不动，<br>配置到底怎么改？</div><div class='tr'></div><p>四章按顺序走完：先弄清为什么卡，再认设备，然后动手改，最后处理改完的遗留问题。</p></div>
+<div>
+<div class='ch'><div class='no'>01</div><div><h3>为什么网页上改不了</h3><small>向导接管了入口，提交按钮本身没有响应</small></div></div>
+<div class='ch'><div class='no'>02</div><div><h3>这台设备到底是什么</h3><small>它是 FTTR 边缘 AP，管理面被裁到只剩网页</small></div></div>
+<div class='ch'><div class='no'>03</div><div><h3>五步把配置写进去</h3><small>取会话、读现值、分频段提交、回读核对</small></div></div>
+<div class='ch'><div class='no'>04</div><div><h3>落地方式与对账</h3><small>网页控制台、命令行、重启后是否保持</small></div></div>
+</div>
+</div>
+</div>
+<div class='pn'>02 / 11</div>
+</section>
+
+<section class='s d'>
+<div class='k'>第一章 / 诊断</div>
+<div class='t' style='font-size:40px;margin-top:6px'>点完「完成」，<br>为什么什么都没发生？</div>
+<div class='b'>
+<ul class='ql'>
+<li>打开设备地址，落地页不是登录框，而是「开始配置」向导</li>
+<li>向导里的「完成」按钮点下去没有响应，页面停住不动</li>
+<li>绕过向导直接访问配置页，又被 403 挡回来</li>
+</ul>
+<div class='ft' style='margin-top:24px'>卡住的不是你的操作，是设备把入口收窄了。下一页拆开它。</div>
+</div>
+<div class='pn'>03 / 11</div>
+</section>
+
+<section class='s'>
+<div class='k'>第二章 / 认设备</div>
+<div class='t'>它是一台边缘 AP，不是一个完整路由器</div>
+<div class='sub'>先认清楚身份，才能判断哪些操作它能接受、哪些会被直接拒绝</div>
+<div class='b' style='margin-top:18px'>
+<table>
+<colgroup><col style='width:15%'><col style='width:37%'><col style='width:48%'></colgroup>
+<thead><tr><th>项目</th><th>实际值</th><th>这决定了什么</th></tr></thead>
+<tbody>
+<tr><td class='k2'>型号</td><td class='m'>B671-1E3W（OptiXstar B670 系列）</td><td>光企从接入设备，本身不做路由和拨号</td></tr>
+<tr><td class='k2'>角色</td><td class='m'>CfgMode = FTTOFTTREDGE_CT</td><td>FTTR 边缘 AP，Wi-Fi 可被主网关统一下发</td></tr>
+<tr><td class='k2'>入口</td><td class='m'>192.168.10.78，仅 80 端口</td><td>只有网页管理面，22 / 23 端口都没开</td></tr>
+<tr><td class='k2'>登录</td><td class='m'>user + 设备底标密码</td><td>写操作还要另取一次性会话令牌</td></tr>
+<tr><td class='k2'>频段</td><td class='m'>2.4G = WLANConfiguration.1　5G = .9</td><td>两条互相独立的配置，必须分别提交</td></tr>
+</tbody>
+</table>
+</div>
+<div class='pn'>04 / 11</div>
+</section>
+
+<section class='s'>
+<div class='k'>第三章 / 动手改</div>
+<div class='t'>五步走完，配置就进去了</div>
+<div class='sub'>全程走设备自己的接口，不点网页按钮，所以页面卡死也不影响</div>
+<div class='b' style='margin-top:16px'>
+<table>
+<colgroup><col style='width:10%'><col style='width:54%'><col style='width:36%'></colgroup>
+<thead><tr><th>步骤</th><th>动作</th><th>怎么算这一步成了</th></tr></thead>
+<tbody>
+<tr><td class='h'>01</td><td>取随机数后登录：先请求 GetRandCount.asp 拿令牌，再带 base64 密码调 login.cgi</td><td>响应头里拿到 Set-Cookie 会话</td></tr>
+<tr><td class='h'>02</td><td>读当前配置：打开 simplewificfgAP.asp，同时取出页面里的 onttoken</td><td>能读到两个频段的现行名称</td></tr>
+<tr><td class='h'>03</td><td>提交修改：按频段分别 POST set.cgi，一次只动一个频段，且只提交真正变化的值</td><td>返回 200，且响应里没有 ErrCode</td></tr>
+<tr><td class='h'>04</td><td>回读核对：重新打开配置页，比对名称是否已变成新值</td><td>页面回显的已经是新名称</td></tr>
+<tr><td class='h'>05</td><td>收尾：记下新密码，让原来的无线终端重新输入一次</td><td>手机能用新密码连上</td></tr>
+</tbody>
+</table>
+</div>
+<div class='pn'>05 / 11</div>
+</section>
+
+<section class='s'>
+<div class='k'>第三章 / 步骤一</div>
+<div class='t'>先拿会话，再谈改配置</div>
+<div class='sub'>三步必须连着做完，中间停下来就会前功尽弃</div>
+<div class='b' style='margin-top:18px'>
+<div class='split'>
+<div class='code'><span class='cg'># 1  取随机数</span>
+POST /asp/GetRandCount.asp
+   Referer 必带，否则 403
+
+<span class='cg'># 2  登录换会话</span>
+POST /login.cgi
+   UserName=user
+   PassWord=base64(明文)
+   x.X_HW_Token=&lt;rand&gt;
+
+<span class='cg'># 3  会话到手</span>
+Cookie: sid=&lt;64hex&gt;:Language:id=1
+
+<span class='cg'># 4  之后所有请求都带这个 Cookie</span></div>
+<div class='side'>
+<h4>三个容易忽略的点</h4>
+<div class='rl'></div>
+<div class='pt'><b>会话寿命很短</b><span>sid 很快失效，分进程一条条发会直接被 403 挡回</span></div>
+<div class='pt'><b>令牌每次重新取</b><span>onttoken 随页面刷新重生成，拿上次的提交必然被拒</span></div>
+<div class='pt'><b>一次做完</b><span>登录、读配置、提交放在同一个流程里，中途停就要重来</span></div>
+</div>
+</div>
+</div>
+<div class='pn'>06 / 11</div>
+</section>
+
+<section class='s'>
+<div class='k'>第三章 / 步骤三</div>
+<div class='t'>三个参数形态错了，整单就会被拒</div>
+<div class='sub'>这三处是实测里卡最久的，逐条对一遍再提交</div>
+<div class='b' style='margin-top:16px'>
+<table>
+<colgroup><col style='width:20%'><col style='width:24%'><col style='width:29%'><col style='width:27%'></colgroup>
+<thead><tr><th>容易错的地方</th><th>错误写法</th><th>正确写法</th><th>会出什么问题</th></tr></thead>
+<tbody>
+<tr><td class='k2'>地址里的参数名</td><td class='m'>t1=　t5=</td><td class='h'>w0=　psk0=　w1=　psk1=</td><td>设备找不到要改的对象，直接拒绝</td></tr>
+<tr><td class='k2'>字段名大小写</td><td class='m'>w0.ssid</td><td class='h'>w0.SSID</td><td>字段匹配不上，名称写不进去</td></tr>
+<tr><td class='k2'>两个频段一起交</td><td class='m'>一次请求带 w0 和 w1</td><td class='h'>分两次，各带一个频段</td><td>整单拒绝，两个频段都没改成</td></tr>
+</tbody>
+</table>
+<div class='strip'>POST /html/amp/wlanbasic/set.cgi?w0=InternetGatewayDevice.LANDevice.1.WLANConfiguration.1&amp;psk0=...PreSharedKey.1&amp;RequestFile=...</div>
+</div>
+<div class='pn'>07 / 11</div>
+</section>
+
+<section class='s'>
+<div class='k'>第三章 / 错误码解读</div>
+<div class='t'>0x1 不是失败，先看它想说什么</div>
+<div class='sub'>同一个错误码，对应两种完全不同的原因，处理方式也不一样</div>
+<div class='b' style='margin-top:22px'>
+<div class='cmp'>
+<div><div class='tag'>情况 A</div><h3>值根本没有变化</h3><p>提交与当前完全相同的值也会被拒。这是设备的空写保护，说明你改的东西本来就在那儿。</p><div class='sc'>自查：把新旧值摆在一起，看是不是真的一样</div></div>
+<div><div class='tag'>情况 B</div><h3>参数形态不对</h3><p>字段名、地址参数、频段组合，任何一处不合规都会让整张单被拒，不是只有那一个字段不生效。</p><div class='sc'>自查：对着上一页那三条逐项核一遍</div></div>
+</div>
+<div class='band'>判断顺序：先比新旧值，再核参数形态，最后才去怀疑账号权限</div>
+</div>
+<div class='pn'>08 / 11</div>
+</section>
+
+<section class='s'>
+<div class='k'>第四章 / 落地</div>
+<div class='t'>改完之后，三种用法</div>
+<div class='sub'>底层都是同一套接口，选一种顺手的就行，不必三种都用</div>
+<div class='b' style='margin-top:16px'>
+<table>
+<colgroup><col style='width:21%'><col style='width:41%'><col style='width:38%'></colgroup>
+<thead><tr><th>方式</th><th>入口</th><th>适合什么情况</th></tr></thead>
+<tbody>
+<tr><td class='k2'>网页控制台</td><td class='h'>http://127.0.0.1:8899</td><td>偶尔改一次，不想记命令和参数</td></tr>
+<tr><td class='k2'>命令行脚本</td><td class='h'>b671_set_ssid.py --ssid X --password Y</td><td>批量、脚本化、交给定时任务跑</td></tr>
+<tr><td class='k2'>定时校正</td><td class='m'>定期读一次，不一致就写回</td><td>担心接入主网关后被同步覆盖</td></tr>
+</tbody>
+</table>
+<p style='font-size:13px;color:#6B7589;line-height:1.7;margin-top:18px'>三种方式共用同一套登录与提交逻辑，改一处三处都生效。控制台默认只监听本机，要局域网访问需显式开放。</p>
+</div>
+<div class='pn'>09 / 11</div>
+</section>
+
+<section class='s'>
+<div class='k'>第四章 / 对账</div>
+<div class='t'>重启之后，配置还在不在</div>
+<div class='sub'>这是改完之后最常被追问的一句，答案分两种情况</div>
+<div class='b' style='margin-top:18px'>
+<div class='blk'><div class='tg'>常态</div><h3>正常断电重启，名称不会变回原值</h3><p>写进去的是设备的持久化配置，不是内存里的临时值。重启时设备从自己的存储里读，读到的还是你改过的名称和密码。</p></div>
+<div class='hr'></div>
+<div class='blk'><div class='tg'>唯一会变的场景</div><h3>它接上一台真正的 FTTR 主网关</h3><p>设备配置里 hilinkStart = 1、CfgMode = FTTOFTTREDGE_CT。一旦进入 FTTR 组网，无线名称和密码跟随主网关，本机改的会被覆盖。当前局域网没有这样的主网关，机制处于未触发状态。</p></div>
+<div class='strip'>验证方法：断电重插 → 恢复后执行 b671_set_ssid.py --check，看回读结果是否仍为设定值</div>
+</div>
+<div class='pn'>10 / 11</div>
+</section>
+
+<section class='s d'>
+<div class='k' style='position:absolute;left:88px;top:64px'>回到开头那个问题</div>
+<div class='fin'>页面点不动，是因为<br>配置从来不在按钮里</div>
+<div class='fr'></div>
+<ul class='cl fc'>
+<li><b>01</b>会话到手　响应里真的带了 Set-Cookie</li>
+<li><b>02</b>分频段交　2.4G 与 5G 各发一次，不合并</li>
+<li><b>03</b>字段名对　w0.SSID 全大写，地址用 w0 / psk0</li>
+<li><b>04</b>回读确认　重开配置页比对，不凭手感</li>
+</ul>
+<div class='fl'></div>
+<div class='fz'>四条全部通过，改一次无线名称只要几十秒</div>
+<div class='fs'>改动范围：2.4G 与 5G 同步修改，密码共用一组</div>
+<div class='pn'>11 / 11</div>
+</section>
+
+</div>
+
+<nav>
+<button id='p'>‹</button><span id='c'>1 / 11</span><button id='n'>›</button>
+</nav>
+
+<script>
+var S=[].slice.call(document.querySelectorAll('.s')),i=0;
+function go(n){i=Math.max(0,Math.min(S.length-1,n));
+ S.forEach(function(s,k){s.classList.toggle('on',k===i)});
+ document.getElementById('c').textContent=(i+1)+' / '+S.length;}
+function fit(){var v=Math.min(innerWidth/1000,innerHeight/620);
+ document.getElementById('stage').style.transform='translate(-50%,-50%) scale('+v+')';}
+addEventListener('resize',fit);fit();
+document.getElementById('p').onclick=function(){go(i-1)};
+document.getElementById('n').onclick=function(){go(i+1)};
+addEventListener('keydown',function(e){
+ if(['ArrowRight','PageDown',' '].indexOf(e.key)>-1){go(i+1);e.preventDefault()}
+ if(['ArrowLeft','PageUp'].indexOf(e.key)>-1){go(i-1);e.preventDefault()}});
+go(0);
+</script>
+</body>
+</html>
